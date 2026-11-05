@@ -43,6 +43,14 @@ function Home({ theme, setTheme }) {
               <div className="card-sub text">View stats</div>
             </button>
 
+            <button
+              className="link-card neon-green small-link"
+              onClick={() => navigate('/calendar')}
+            >
+              <div className="card-title text">Calendar</div>
+              <div className="card-sub text">Workout days</div>
+            </button>
+
             <button className="link-card neon-green small-link" onClick={() => {/* TODO: Implement aura board functionality */}}>
               <div className="card-title text">Aura Board</div>
               <div className="card-sub text">See your aura</div>

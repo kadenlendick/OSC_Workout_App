@@ -5,6 +5,7 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Brainrot from "./Components/Brainrot";
 import Home from './Pages/Home';
+import Calendar from './Pages/Calendar';
 import Session from './Components/Session';
 
 const THEMES = ['dark', 'light', 'colorblind'];
@@ -47,6 +48,9 @@ function App() {
           >
             Brainrot
           </NavLink>
+          <NavLink to="/calendar">
+            Calendar
+          </NavLink>
         </nav>
 
         <div>
@@ -55,6 +59,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/brainrot" element={<Brainrot />} />
+            <Route path="/calendar" element={<Calendar />} />
             <Route path="/session" element={<Session />} />
           </Routes>
         </div>

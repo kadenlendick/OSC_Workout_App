@@ -1,0 +1,175 @@
+.calendar-root {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.calendar-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+}
+
+.calendar-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  border: 1px solid var(--surface-border);
+  color: var(--text-soft);
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+}
+
+.calendar-main {
+  width: 100%;
+  max-width: 480px;
+  background: linear-gradient(
+    180deg,
+    var(--surface),
+    color-mix(in srgb, var(--surface) 50%, transparent)
+  );
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 30px var(--shadow);
+}
+
+.calendar-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.month-label {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.month-nav-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-heading);
+  border: 1px solid var(--accent-1);
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.weekday-row,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.35rem;
+}
+
+.weekday-label {
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  padding: 0.25rem 0;
+}
+
+.calendar-cell {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  color: var(--text-heading);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  position: relative;
+}
+
+.calendar-cell.empty {
+  background: transparent;
+  border: none;
+}
+
+.calendar-cell.day {
+  cursor: pointer;
+}
+
+.calendar-cell.day:hover {
+  border-color: color-mix(in srgb, var(--accent-1) 50%, transparent);
+}
+
+.calendar-cell.is-today {
+  border-color: var(--accent-1);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-1) 25%, transparent);
+}
+
+.calendar-cell.has-workout {
+  background: color-mix(in srgb, var(--accent-3) 18%, var(--surface));
+}
+
+.calendar-cell.is-selected {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent-2) 30%, transparent);
+}
+
+.day-number {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.workout-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent-3);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent-3) 60%, transparent);
+  display: inline-block;
+}
+
+.calendar-legend {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.calendar-detail {
+  margin-top: 0.5rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
+  border: 1px solid var(--surface-border);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.calendar-hint {
+  margin: 0;
+  opacity: 0.75;
+}
+
+@media (max-width: 420px) {
+  .calendar-root {
+    padding: 1rem;
+  }
+
+  .day-number {
+    font-size: 0.85rem;
+  }
+}
